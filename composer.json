@@ -1,0 +1,10 @@
+{
+    "name": "demorose/phpci-casperjs",
+    "authors": [
+        {
+            "name": "Emmanuel Leveque",
+            "email": "eleveque@hi-media.com"
+        }
+    ],
+    "require": {}
+}

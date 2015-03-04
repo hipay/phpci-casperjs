@@ -1,12 +1,12 @@
 <?php
 
-namespace eleveque\CasperJsPlugin;
+namespace PHPCI\Plugin;
 
 use PHPCI\Plugin;
 use PHPCI\Builder;
 use PHPCI\Model\Build;
 
-use eleveque\CasperJsPlugin\Util\XUnitParser;
+use PHPCI\Plugin\Util\XUnitParser;
 
 /**
 * CasperJs - Allows CasperJS testing.
@@ -56,8 +56,8 @@ class CasperJs implements Plugin
         $curdir = getcwd();
         chdir($this->phpci->buildPath);
 
-        $cmd = $phpunit . ' test %s --xunit="%s"';
-        $success = $this->phpci->executeCommand($cmd, $this->testsPath, $this->xUnitFilePath);
+        $cmd = $casperJs . " test $this->testsPath --xunit=$this->xUnitFilePath";
+        $success = $this->phpci->executeCommand($cmd);
 
         chdir($curdir);
 
@@ -72,8 +72,8 @@ class CasperJs implements Plugin
             throw $ex;
         }
 
-        $this->build->storeMeta('phpunit-errors', $failures);
-        $this->build->storeMeta('phpunit-data', $output);
+        $this->build->storeMeta('casperJs-errors', $failures);
+        $this->build->storeMeta('casperJs-data', $output);
 
         $this->phpci->logExecOutput(true);
 

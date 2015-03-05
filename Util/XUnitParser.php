@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPCI\Plugin\Util;
+namespace Demorose\PHPCI\Plugin\Util;
 
 use PHPCI\Helper\Lang;
 

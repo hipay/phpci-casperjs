@@ -15,7 +15,7 @@
     "target-dir": "Demorose/PHPCI/Plugin",
     "autoload": {
         "psr-0": {
-            "Demorose/PHPCI/Plugin" : ""
+            "Demorose\\PHPCI\\Plugin" : ""
         }
     }
 }

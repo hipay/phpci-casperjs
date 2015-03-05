@@ -24,9 +24,9 @@ class CasperJs implements Plugin
      */
     protected $build;
 
-    protected $xUnitFilePath = '/tmp/casperOutput.xml';
+    protected $x_unit_file_path = '/tmp/casperOutput.xml';
 
-    protected $testsPath = 'tests/test.js';
+    protected $tests_path = 'tests/test.js';
 
     /**
      * Standard Constructor
@@ -56,12 +56,12 @@ class CasperJs implements Plugin
         $curdir = getcwd();
         chdir($this->phpci->buildPath);
 
-        $cmd = $casperJs . " test $this->testsPath --xunit=$this->xUnitFilePath";
+        $cmd = $casperJs . " test $this->tests_path --xunit=$this->x_unit_file_path";
         $success = $this->phpci->executeCommand($cmd);
 
         chdir($curdir);
 
-        $xUnitString = file_get_contents($this->xUnitFilePath);
+        $xUnitString = file_get_contents($this->x_unit_file_path);
         try {
             $xUnitParser = new XUnitParser($xUnitString);
             $output = $xUnitParser->parse();
@@ -86,12 +86,12 @@ class CasperJs implements Plugin
      */
     public function buildArgs($options)
     {
-        if (!empty($options['testsPath'])) {
-            $this->testsPath = $options['testsPath'];
+        if (!empty($options['tests_path'])) {
+            $this->tests_path = $options['tests_path'];
         }
 
-        if (!empty($options['xUnitFilePath'])) {
-            $this->xUnitFilePath = $options['xUnitFilePath'];
+        if (!empty($options['x_unit_file_path'])) {
+            $this->x_unit_file_path = $options['x_unit_file_path'];
         }
 
     }

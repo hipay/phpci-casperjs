@@ -28,6 +28,8 @@ class CasperJs implements Plugin
 
     protected $tests_path = 'tests/test.js';
 
+    protected $arguments = '';
+
     /**
      * Standard Constructor
      */
@@ -56,7 +58,7 @@ class CasperJs implements Plugin
         $curdir = getcwd();
         chdir($this->phpci->buildPath);
 
-        $cmd = $casperJs . " test $this->tests_path --xunit=$this->x_unit_file_path";
+        $cmd = $casperJs . " test $this->tests_path --xunit=$this->x_unit_file_path $this->arguments";
         $success = $this->phpci->executeCommand($cmd);
 
         chdir($curdir);
@@ -92,6 +94,10 @@ class CasperJs implements Plugin
 
         if (!empty($options['x_unit_file_path'])) {
             $this->x_unit_file_path = $options['x_unit_file_path'];
+        }
+
+        if (!empty($options['arguments'])) {
+            $this->arguments= $options['arguments'];
         }
 
     }

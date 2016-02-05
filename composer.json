@@ -1,11 +1,11 @@
 {
-    "name": "demorose/phpci-casperjs",
-    "Description": "Integration of casperJs tests",
+    "name": "hipay/phpci-casperjs",
+    "Description": "Integration of CasperJs tests",
     "license": "MIT",
     "authors": [
         {
             "name": "Emmanuel Leveque",
-            "email": "eleveque@hi-media.com"
+            "email": "eleveque@hipay.com"
         }
     ],
     "minimum-stability" : "dev",

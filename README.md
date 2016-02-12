@@ -22,7 +22,7 @@ This PHPCI plugin allow you to launch casperjs tests
 * Copy javascript to PHPCI :
 
 ```bash
-    cp /path/to/phpci/vendor/demorose/phpci-casperjs/Demorose/PHPCI/Plugin/js/casperJs.js /path/to/phpci/public/assets/js/build-plugins/casperJs.js
+    cp /path/to/phpci/vendor/demorose/phpci-casperjs/Hipay/PHPCI/Plugin/js/casperJs.js /path/to/phpci/public/assets/js/build-plugins/casperJs.js
 ```
 
 ## Configuration Options

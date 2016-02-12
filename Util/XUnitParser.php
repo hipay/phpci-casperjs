@@ -1,6 +1,6 @@
 <?php
 
-namespace Demorose\PHPCI\Plugin\Util;
+namespace Hipay\PHPCI\Plugin\Util;
 
 use PHPCI\Helper\Lang;
 
